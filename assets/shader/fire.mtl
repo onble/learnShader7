@@ -11,6 +11,11 @@
     "0": {
       "defines": {
         "USE_TEXTURE": true
+      },
+      "props": {
+        "noiseTex": {
+          "__uuid__": "b1631fe9-738f-49b0-bc24-1238154a9276"
+        }
       }
     }
   }
