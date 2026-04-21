@@ -14,9 +14,10 @@ techniques:
           texture: { value: white }
           u_time: { value: 0.0 }
           noiseTex: { value: white }
-          u_brightness: { value: [1, 1, 1, 1], editor: { type: "color" } }
-          u_middle: { value: [1, 1, 1, 1], editor: { type: "color" } }
-          u_dark: { value: [1, 1, 1, 1], editor: { type: "color" } }
+          u_brightness:
+            { value: [0.90, 0.42, 0.42, 1.], editor: { type: "color" } }
+          u_middle: { value: [0.14, 1., 0., 1.], editor: { type: "color" } }
+          u_dark: { value: [0.39, 0.85, 0.82, 1.], editor: { type: "color" } }
 
 }%
 
@@ -96,7 +97,7 @@ void main() {
   float r2 = f2 - f3;
   float r3 = f3;
   
-  vec3 color = vec3(r1);
+  vec3 color = (u_dark * r3 + u_middle * r2 + u_brightness * r1).rgb;
   
   gl_FragColor = vec4(color, 1.0);
 }
