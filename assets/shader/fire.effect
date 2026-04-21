@@ -99,6 +99,6 @@ void main() {
   
   vec3 color = (u_dark * r3 + u_middle * r2 + u_brightness * r1).rgb;
   
-  gl_FragColor = vec4(color, 1.0);
+  gl_FragColor = vec4(color, f1);
 }
 }%
