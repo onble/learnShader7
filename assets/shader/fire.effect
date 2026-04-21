@@ -89,7 +89,14 @@ void main() {
   
   // step 返回值 0或1 所以非黑即白，
   float f1 = step(n, p1);
-  vec3 color = vec3(f1);
+  float f2 = step(n, p2);
+  float f3 = step(n, p3);
+  
+  float r1 = f1 - f2;
+  float r2 = f2 - f3;
+  float r3 = f3;
+  
+  vec3 color = vec3(r1);
   
   gl_FragColor = vec4(color, 1.0);
 }
